@@ -1,35 +1,11 @@
-import React, { useRef, useState } from 'react';
-import { Card, Col, Row, Select } from "antd";
+import React, { useState } from 'react';
+import { Card, Col, Row } from "antd";
 import { Pie, measureTextWidth } from '@ant-design/charts';
-import Text from "antd/lib/typography/Text";
-
-const {Option} = Select;
-
-const SelectAddressScale = (props) => {
-    const scales = props.scales;
-    const onSelect = props.onSelect;
-
-    const options = scales.map((scale) => {
-        return (
-            <Option value={scale}>{scale}</Option>
-        );
-    });
-
-    return (
-        <div style={{textAlign: 'right'}}>
-            <Select defaultValue={scales[0]} size="small" style={{width: 70}} onChange={onSelect}>
-                {options}
-            </Select>
-        </div>
-    );
-};
+import SelectCustom from './SelectCustom';
 
 const WorkAddressShow = (props) => {
     const addressScales = ["省", "市", "县"];
     const {province, city, district, count} = props.data;
-    const chart = useRef(null);
-    const [height, setHeight] = useState(300);
-    const [scale, setScale] = useState(province);
     const [chartData, setChartData] = useState(province);
 
     function renderStatistic(containerWidth, text, style) {
@@ -112,42 +88,32 @@ const WorkAddressShow = (props) => {
     };
 
     const handleSelectAddressScales = (value) => {
-        setScale(value);
         switch (value) {
             case addressScales[0]:
                 setChartData(province);
-                return;
+                break;
             case addressScales[1]:
                 setChartData(city);
-                return;
+                break;
             case addressScales[2]:
                 setChartData(district);
-                return;
+                break;
             default:
                 setChartData(province);
         }
     };
 
-    const CardTitle = () => {
-        return (
-            <div>
-                <Row>
-                    <Col span={12} >
-                        <div style={{textAlign: "right", marginLeft: '80px'}}>
-                            some
-                        </div>
-                    </Col>
-                    <Col span={12}>
-                        <SelectAddressScale scales={addressScales} onSelect={handleSelectAddressScales} />
-                    </Col>
-                </Row>
-
-            </div>
-        );
-    };
-
     return (
-        <Card title={<CardTitle />}
+        <Card title={<Row>
+            <Col span={12}>
+                <div style={{textAlign: 'right', marginRight: '-30px'}}>
+                    some
+                </div>
+            </Col>
+            <Col span={12}>
+                <SelectCustom selects={addressScales} onSelect={handleSelectAddressScales} />
+            </Col>
+        </Row>}
               style={{width: '100%', height: '100%', overflow: 'hidden'}}>
             <Row gutter={16}>
                 <Col span={24}>
