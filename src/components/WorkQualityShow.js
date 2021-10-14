@@ -4,10 +4,11 @@ import { Liquid } from '@ant-design/charts';
 
 const WorkQualityShow = (props) => {
     const config = {
+        height: 300,
         percent: props.data,
         outline: {
             border: 4,
-            distance: 8,
+            distance: 7,
         },
         wave: {length: 128},
     };

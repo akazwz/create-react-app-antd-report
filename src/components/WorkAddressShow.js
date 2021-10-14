@@ -31,6 +31,7 @@ const WorkAddressShow = (props) => {
     }
 
     let config = {
+        height: 300,
         appendPadding: 10,
         data: chartData,
         angleField: 'value',

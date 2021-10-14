@@ -1,11 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Row, Col } from 'antd';
 import SumDataTextShow from './components/SumDataTextShow';
 import './App.less';
-import WorkQualityShow from "./components/WorkQualityShow";
-import WorkAddressShow from "./components/WorkAddressShow";
+import WorkQualityShow from './components/WorkQualityShow';
+import WorkAddressShow from './components/WorkAddressShow';
+import SettingTool from './components/SettingTool';
+import { useWindowSize } from "./hooks/useWindowSize";
 
 const App = () => {
+    const {width, height} = useWindowSize();
+    console.log(width);
+    console.log(height);
+    const [showHeight, setShowHeight] = useState(height / 2);
+
+    useEffect(() => {
+        setShowHeight(height / 2);
+    }, [height]);
+
     const sumTextData = {
         time: 3337,
         distance: 3337,
@@ -125,18 +136,29 @@ const App = () => {
 
     return (
         <>
-            <Row style={{textAlign: "center"}}>
+            <Row justify="center" style={{textAlign: "center"}}>
                 <Col xs={24} sm={24} md={12} lg={6} xl={6}>
-                    <SumDataTextShow data={sumTextData} />
+                    <div style={{height: showHeight, minHeight: '370px'}}>
+                        <SumDataTextShow data={sumTextData} />
+                    </div>
                 </Col>
                 <Col xs={24} sm={24} md={12} lg={6} xl={6}>
-                    <WorkQualityShow data={0.7} />
+                    <div style={{height: showHeight, minHeight: '370px'}}>
+                        <WorkQualityShow data={0.7} />
+                    </div>
                 </Col>
+                <Col xs={24} sm={24} md={12} lg={6} xl={6}>
+                    <div style={{height: showHeight, minHeight: '370px'}}>
+                        <WorkAddressShow data={addressData} />
+                    </div>
+                </Col>
+                <Col xs={24} sm={24} md={12} lg={6} xl={6}>
+                    {/*<SettingTool data={sumTextData} />*/}
+                </Col>
+            </Row>
+            <Row style={{textAlign: "center", height: showHeight, minHeight: '370px'}}>
                 <Col xs={24} sm={24} md={12} lg={6} xl={6}>
                     <WorkAddressShow data={addressData} />
-                </Col>
-                <Col xs={24} sm={24} md={12} lg={6} xl={6}>
-                    <SumDataTextShow data={sumTextData} />
                 </Col>
             </Row>
         </>
