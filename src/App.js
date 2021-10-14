@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { Row, Col } from 'antd';
 import SumDataTextShow from './components/SumDataTextShow';
 import { useWindowSize } from './hooks/useWindowSize';
-
 import WorkQualityShow from './components/WorkQualityShow';
 import WorkAddressShow from './components/WorkAddressShow';
-import SettingTool from './components/SettingTool';
+import SettingToolInput from './components/SettingToolInput';
 import WorkDataShow from './components/WorkDataShow';
+import SettingToolOptions from './components/SettingToolOptions';
 import './App.less';
 
 const App = () => {
@@ -486,12 +486,15 @@ const App = () => {
                     </div>
                 </Col>
                 <Col xs={24} sm={24} md={12} lg={6} xl={6}>
-                    {/*<SettingTool data={sumTextData} />*/}
+                    <SettingToolInput />
                 </Col>
             </Row>
             <Row style={{textAlign: "center", height: showHeight, minHeight: '370px'}}>
                 <Col xs={24} sm={24} md={24} lg={18} xl={18}>
                     <WorkDataShow data={workData} />
+                </Col>
+                <Col xs={24} sm={24} md={24} lg={6} xl={6}>
+                    <SettingToolOptions />
                 </Col>
             </Row>
         </>

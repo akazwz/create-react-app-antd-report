@@ -1,14 +1,13 @@
 import React from 'react';
 
-const SettingTool = () => {
+const SettingToolInput = () => {
     return (
         <div style={{
             backgroundColor: 'grey',
-            minHeight: '100px',
         }}>
             setting tool.
         </div>
     );
 };
 
-export default SettingTool;
+export default SettingToolInput;

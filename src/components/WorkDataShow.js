@@ -44,7 +44,7 @@ const WorkDataShow = (props) => {
 
     return (
         <Card title={<>
-            <Radio.Group onChange={handleRadioOnChange} defaultValue="a">
+            <Radio.Group onChange={handleRadioOnChange} defaultValue="time">
                 <Radio.Button value="time">Time</Radio.Button>
                 <Radio.Button value="distance">Distance</Radio.Button>
                 <Radio.Button value="area">Area</Radio.Button>
