@@ -1,20 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import { Row, Col } from 'antd';
 import SumDataTextShow from './components/SumDataTextShow';
-import './App.less';
+import { useWindowSize } from './hooks/useWindowSize';
+
 import WorkQualityShow from './components/WorkQualityShow';
 import WorkAddressShow from './components/WorkAddressShow';
 import SettingTool from './components/SettingTool';
-import { useWindowSize } from "./hooks/useWindowSize";
+import WorkDataShow from './components/WorkDataShow';
+import './App.less';
 
 const App = () => {
     const {width, height} = useWindowSize();
     console.log(width);
     console.log(height);
-    const [showHeight, setShowHeight] = useState(height / 2);
+    const [showHeight, setShowHeight] = useState(height / 2 - 50);
 
     useEffect(() => {
-        setShowHeight(height / 2);
+        setShowHeight(height / 2 - 50);
     }, [height]);
 
     const sumTextData = {
@@ -134,6 +136,337 @@ const App = () => {
         count: 77,
     };
 
+    const workData = {
+        time: [
+            {
+                name: 'London',
+                month: 'Jan.',
+                value: 18.9,
+            },
+            {
+                name: 'London',
+                month: 'Feb.',
+                value: 28.8,
+            },
+            {
+                name: 'London',
+                month: 'Mar.',
+                value: 39.3,
+            },
+            {
+                name: 'London',
+                month: 'Apr.',
+                value: 81.4,
+            },
+            {
+                name: 'London',
+                month: 'May',
+                value: 47,
+            },
+            {
+                name: 'London',
+                month: 'Jun.',
+                value: 20.3,
+            },
+            {
+                name: 'London',
+                month: 'Jul.',
+                value: 24,
+            },
+            {
+                name: 'London',
+                month: 'Aug.',
+                value: 35.6,
+            },
+            {
+                name: 'Berlin',
+                month: 'Jan.',
+                value: 12.4,
+            },
+            {
+                name: 'Berlin',
+                month: 'Feb.',
+                value: 23.2,
+            },
+            {
+                name: 'Berlin',
+                month: 'Mar.',
+                value: 34.5,
+            },
+            {
+                name: 'Berlin',
+                month: 'Apr.',
+                value: 99.7,
+            },
+            {
+                name: 'Berlin',
+                month: 'May',
+                value: 52.6,
+            },
+            {
+                name: 'Berlin',
+                month: 'Jun.',
+                value: 35.5,
+            },
+            {
+                name: 'Berlin',
+                month: 'Jul.',
+                value: 37.4,
+            },
+            {
+                name: 'Berlin',
+                month: 'Aug.',
+                value: 42.4,
+            },
+        ],
+        distance: [
+            {
+                name: 'London',
+                month: 'Jan.',
+                value: 38.9,
+            },
+            {
+                name: 'London',
+                month: 'Feb.',
+                value: 18.8,
+            },
+            {
+                name: 'London',
+                month: 'Mar.',
+                value: 33.3,
+            },
+            {
+                name: 'London',
+                month: 'Apr.',
+                value: 51.4,
+            },
+            {
+                name: 'London',
+                month: 'May',
+                value: 67,
+            },
+            {
+                name: 'London',
+                month: 'Jun.',
+                value: 10.3,
+            },
+            {
+                name: 'London',
+                month: 'Jul.',
+                value: 24,
+            },
+            {
+                name: 'London',
+                month: 'Aug.',
+                value: 35.6,
+            },
+            {
+                name: 'Berlin',
+                month: 'Jan.',
+                value: 12.4,
+            },
+            {
+                name: 'Berlin',
+                month: 'Feb.',
+                value: 23.2,
+            },
+            {
+                name: 'Berlin',
+                month: 'Mar.',
+                value: 34.5,
+            },
+            {
+                name: 'Berlin',
+                month: 'Apr.',
+                value: 99.7,
+            },
+            {
+                name: 'Berlin',
+                month: 'May',
+                value: 62.6,
+            },
+            {
+                name: 'Berlin',
+                month: 'Jun.',
+                value: 35.5,
+            },
+            {
+                name: 'Berlin',
+                month: 'Jul.',
+                value: 77.4,
+            },
+            {
+                name: 'Berlin',
+                month: 'Aug.',
+                value: 42.4,
+            },
+        ],
+        area: [
+            {
+                name: 'London',
+                month: 'Jan.',
+                value: 78.9,
+            },
+            {
+                name: 'London',
+                month: 'Feb.',
+                value: 28.8,
+            },
+            {
+                name: 'London',
+                month: 'Mar.',
+                value: 59.3,
+            },
+            {
+                name: 'London',
+                month: 'Apr.',
+                value: 81.4,
+            },
+            {
+                name: 'London',
+                month: 'May',
+                value: 37,
+            },
+            {
+                name: 'London',
+                month: 'Jun.',
+                value: 10.3,
+            },
+            {
+                name: 'London',
+                month: 'Jul.',
+                value: 24,
+            },
+            {
+                name: 'London',
+                month: 'Aug.',
+                value: 25.6,
+            },
+            {
+                name: 'Berlin',
+                month: 'Jan.',
+                value: 12.4,
+            },
+            {
+                name: 'Berlin',
+                month: 'Feb.',
+                value: 23.2,
+            },
+            {
+                name: 'Berlin',
+                month: 'Mar.',
+                value: 24.5,
+            },
+            {
+                name: 'Berlin',
+                month: 'Apr.',
+                value: 99.7,
+            },
+            {
+                name: 'Berlin',
+                month: 'May',
+                value: 52.6,
+            },
+            {
+                name: 'Berlin',
+                month: 'Jun.',
+                value: 35.5,
+            },
+            {
+                name: 'Berlin',
+                month: 'Jul.',
+                value: 87.4,
+            },
+            {
+                name: 'Berlin',
+                month: 'Aug.',
+                value: 42.4,
+            },
+        ],
+        earth: [
+            {
+                name: 'London',
+                month: 'Jan.',
+                value: 38.9,
+            },
+            {
+                name: 'London',
+                month: 'Feb.',
+                value: 28.8,
+            },
+            {
+                name: 'London',
+                month: 'Mar.',
+                value: 29.3,
+            },
+            {
+                name: 'London',
+                month: 'Apr.',
+                value: 81.4,
+            },
+            {
+                name: 'London',
+                month: 'May',
+                value: 47,
+            },
+            {
+                name: 'London',
+                month: 'Jun.',
+                value: 20.3,
+            },
+            {
+                name: 'London',
+                month: 'Jul.',
+                value: 74,
+            },
+            {
+                name: 'London',
+                month: 'Aug.',
+                value: 35.6,
+            },
+            {
+                name: 'Berlin',
+                month: 'Jan.',
+                value: 42.4,
+            },
+            {
+                name: 'Berlin',
+                month: 'Feb.',
+                value: 23.2,
+            },
+            {
+                name: 'Berlin',
+                month: 'Mar.',
+                value: 34.5,
+            },
+            {
+                name: 'Berlin',
+                month: 'Apr.',
+                value: 69.7,
+            },
+            {
+                name: 'Berlin',
+                month: 'May',
+                value: 52.6,
+            },
+            {
+                name: 'Berlin',
+                month: 'Jun.',
+                value: 35.5,
+            },
+            {
+                name: 'Berlin',
+                month: 'Jul.',
+                value: 87.4,
+            },
+            {
+                name: 'Berlin',
+                month: 'Aug.',
+                value: 42.4,
+            },
+        ],
+    };
+
     return (
         <>
             <Row justify="center" style={{textAlign: "center"}}>
@@ -157,8 +490,8 @@ const App = () => {
                 </Col>
             </Row>
             <Row style={{textAlign: "center", height: showHeight, minHeight: '370px'}}>
-                <Col xs={24} sm={24} md={12} lg={6} xl={6}>
-                    <WorkAddressShow data={addressData} />
+                <Col xs={24} sm={24} md={24} lg={18} xl={18}>
+                    <WorkDataShow data={workData} />
                 </Col>
             </Row>
         </>
