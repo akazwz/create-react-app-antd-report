@@ -1,11 +1,11 @@
 import React from 'react';
 import { Row, Col } from 'antd';
-import MyForm from "./MyForm";
+import MyForm from './MyForm';
 
 const SettingToolInput = () => {
 
     return (
-        <div style={{marginLeft: 0, marginRight: 0}}>
+        <div style={{marginLeft: 0, marginRight: 0, borderBottom: '1px solid #f0f0f0'}}>
             <Row justify="space-around" align="middle">
                 <Col span={0}>
                 </Col>
