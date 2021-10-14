@@ -3,18 +3,28 @@ import { Row, Col } from 'antd';
 import SumDataTextShow from './components/SumDataTextShow';
 import './App.less';
 
-const App = () => (
-    <>
-        <Row style={{textAlign: "center"}}>
-            <Col xs={2} sm={2} md={2} lg={2} xl={2}>
-            </Col>
-            <Col xs={20} sm={20} md={20} lg={20} xl={20}>
-                <SumDataTextShow />
-            </Col>
-            <Col xs={2} sm={2} md={2} lg={2} xl={2}>
-            </Col>
-        </Row>
-    </>
-);
+const App = () => {
+    const sumTextData = {
+        time: 3337,
+        distance: 3337,
+        area: 3337,
+        earth: 3337,
+    };
 
+    return (
+        <>
+            <Row style={{textAlign: "center"}}>
+                <Col xs={24} sm={24} md={12} lg={8} xl={8}>
+                    <SumDataTextShow data={sumTextData} />
+                </Col>
+                <Col xs={24} sm={24} md={12} lg={8} xl={8}>
+                    <SumDataTextShow data={sumTextData} />
+                </Col>
+                <Col xs={24} sm={24} md={12} lg={8} xl={8}>
+                    <SumDataTextShow data={sumTextData} />
+                </Col>
+            </Row>
+        </>
+    );
+}
 export default App;
