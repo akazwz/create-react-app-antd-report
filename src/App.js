@@ -15,13 +15,16 @@ const App = () => {
     return (
         <>
             <Row style={{textAlign: "center"}}>
-                <Col xs={24} sm={24} md={12} lg={8} xl={8}>
+                <Col xs={24} sm={24} md={12} lg={6} xl={6}>
                     <SumDataTextShow data={sumTextData} />
                 </Col>
-                <Col xs={24} sm={24} md={12} lg={8} xl={8}>
+                <Col xs={24} sm={24} md={12} lg={6} xl={6}>
                     <WorkQualityShow data={70} />
                 </Col>
-                <Col xs={24} sm={24} md={12} lg={8} xl={8}>
+                <Col xs={24} sm={24} md={12} lg={6} xl={6}>
+                    <SumDataTextShow data={sumTextData} />
+                </Col>
+                <Col xs={24} sm={24} md={12} lg={6} xl={6}>
                     <SumDataTextShow data={sumTextData} />
                 </Col>
             </Row>
