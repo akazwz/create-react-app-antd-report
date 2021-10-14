@@ -2,6 +2,7 @@ import React from 'react';
 import { Row, Col } from 'antd';
 import SumDataTextShow from './components/SumDataTextShow';
 import './App.less';
+import WorkQualityShow from "./components/WorkQualityShow";
 
 const App = () => {
     const sumTextData = {
@@ -18,7 +19,7 @@ const App = () => {
                     <SumDataTextShow data={sumTextData} />
                 </Col>
                 <Col xs={24} sm={24} md={12} lg={8} xl={8}>
-                    <SumDataTextShow data={sumTextData} />
+                    <WorkQualityShow data={70} />
                 </Col>
                 <Col xs={24} sm={24} md={12} lg={8} xl={8}>
                     <SumDataTextShow data={sumTextData} />
