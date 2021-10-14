@@ -13,14 +13,16 @@ const WorkQualityShow = (props) => {
         wave: {length: 128},
     };
     return (
-        <Card title="Card title"
-              style={{width: '100%', height: '100%', overflow: 'hidden'}}>
-            <Row gutter={16}>
-                <Col span={24}>
-                    <Liquid {...config} />
-                </Col>
-            </Row>
-        </Card>
+        <div style={{textAlign: 'center'}}>
+            <Card title="Card title"
+                  style={{width: '100%', height: '100%', overflow: 'hidden'}}>
+                <Row gutter={16}>
+                    <Col span={24}>
+                        <Liquid {...config} />
+                    </Col>
+                </Row>
+            </Card>
+        </div>
     );
 };
 

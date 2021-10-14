@@ -469,7 +469,7 @@ const App = () => {
 
     return (
         <>
-            <Row justify="center" style={{textAlign: "center"}}>
+            <Row justify="center" style={{}}>
                 <Col xs={24} sm={24} md={12} lg={6} xl={6}>
                     <div style={{height: showHeight, minHeight: '370px'}}>
                         <SumDataTextShow data={sumTextData} />
@@ -489,7 +489,7 @@ const App = () => {
                     <SettingToolInput />
                 </Col>
             </Row>
-            <Row style={{textAlign: "center", height: showHeight, minHeight: '370px'}}>
+            <Row style={{height: showHeight, minHeight: '370px'}}>
                 <Col xs={24} sm={24} md={24} lg={18} xl={18}>
                     <WorkDataShow data={workData} />
                 </Col>

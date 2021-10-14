@@ -43,14 +43,14 @@ const WorkDataShow = (props) => {
     };
 
     return (
-        <Card title={<>
+        <Card title={<div style={{textAlign: 'center'}}>
             <Radio.Group onChange={handleRadioOnChange} defaultValue="time">
                 <Radio.Button value="time">Time</Radio.Button>
                 <Radio.Button value="distance">Distance</Radio.Button>
                 <Radio.Button value="area">Area</Radio.Button>
                 <Radio.Button value="earth">Earth</Radio.Button>
             </Radio.Group>
-        </>}
+        </div>}
               style={{width: '100%', height: '100%', overflow: 'hidden'}}>
             <Row gutter={16}>
                 <Col span={24}>
