@@ -9,8 +9,6 @@ const SettingToolOptions = () => {
                     <Button type="primary">Primary Button</Button>
                 </div>
             </Col>
-            <div style={{minHeight: '400px'}}>
-            </div>
             <Col span={12}>
                 <div style={{textAlign: 'center'}}>
                     <Button type="primary">Primary Button</Button>
