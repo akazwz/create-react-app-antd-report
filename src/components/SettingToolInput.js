@@ -5,14 +5,10 @@ import MyForm from './MyForm';
 const SettingToolInput = () => {
 
     return (
-        <div style={{marginLeft: 0, marginRight: 0, borderBottom: '1px solid #f0f0f0'}}>
+        <div style={{with: '100%', height: '100%', marginLeft: 0, marginRight: 0, borderBottom: '1px solid #f0f0f0'}}>
             <Row justify="space-around" align="middle">
-                <Col span={0}>
-                </Col>
                 <Col span={24}>
                     <MyForm />
-                </Col>
-                <Col span={0}>
                 </Col>
             </Row>
         </div>

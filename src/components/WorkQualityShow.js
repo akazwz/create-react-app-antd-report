@@ -13,7 +13,7 @@ const WorkQualityShow = (props) => {
         wave: {length: 128},
     };
     return (
-        <div style={{textAlign: 'center'}}>
+        <div style={{textAlign: 'center', width: '100%', height: '100%',}}>
             <Card title="Card title"
                   style={{width: '100%', height: '100%', overflow: 'hidden'}}>
                 <Row gutter={16}>
