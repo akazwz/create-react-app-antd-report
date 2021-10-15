@@ -6,6 +6,7 @@ import './App.less';
 const App = () => {
     const [addressData, setAddressData] = useState();
     const [sumTextData, setSumTextData] = useState();
+    const [sns, setSns] = useState([]);
     useEffect(() => {
         getWorkReportDataApi().then((res) => {
             console.log(res);
@@ -15,6 +16,7 @@ const App = () => {
             //const {province, city, district} = locations_chart;
             setSumTextData(all_tdae);
             setAddressData(locations_chart);
+            setSns(sns);
         }).catch((err) => {
             console.log(err);
         });
@@ -22,7 +24,7 @@ const App = () => {
 
     return (
         <>
-            <GridLayout sumTextData={sumTextData} addressData={addressData} />
+            <GridLayout sumTextData={sumTextData} addressData={addressData} sns={sns} />
         </>
     );
 };
