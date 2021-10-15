@@ -4,7 +4,7 @@ import SumDataTextShow from '../components/SumDataTextShow';
 import { useWindowSize } from '../hooks/useWindowSize';
 import WorkQualityShow from '../components/WorkQualityShow';
 import WorkAddressShow from '../components/WorkAddressShow';
-import SettingToolInput from '../components/SettingToolInput';
+import SettingTool from '../components/SettingToolInput';
 import WorkDataShow from '../components/WorkDataShow';
 import SettingToolOptions from '../components/SettingToolOptions';
 import '../App.less';
@@ -486,7 +486,7 @@ const Layout = () => {
                     </div>
                 </Col>
                 <Col xs={24} sm={24} md={12} lg={6} xl={6}>
-                    <SettingToolInput />
+                    <SettingTool />
                 </Col>
             </Row>
             <Row style={{height: showHeight, width: '100%', minHeight: '370px'}}>

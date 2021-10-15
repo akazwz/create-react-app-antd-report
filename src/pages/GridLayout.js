@@ -6,7 +6,7 @@ import SumDataTextShow from "../components/SumDataTextShow";
 import WorkQualityShow from "../components/WorkQualityShow";
 import WorkAddressShow from "../components/WorkAddressShow";
 import WorkDataShow from "../components/WorkDataShow";
-import SettingToolInput from "../components/SettingToolInput";
+import SettingTool from "../components/SettingTool";
 import SettingToolOptions from "../components/SettingToolOptions";
 
 const GridLayout = () => {
@@ -538,8 +538,7 @@ const GridLayout = () => {
                 </div>
                 <div key="work-report-setting" style={{backgroundColor: '#ffffff', overflow: 'hidden'}}
                      hidden={settingHidden}>
-                    <SettingToolInput />
-                    <SettingToolOptions />
+                    <SettingTool breakpoint={breakpoint}/>
                 </div>
             </ResponsiveGridLayout>
         </>
