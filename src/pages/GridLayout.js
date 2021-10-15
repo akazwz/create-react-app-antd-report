@@ -9,7 +9,7 @@ import WorkDataShow from "../components/WorkDataShow";
 import SettingTool from "../components/SettingTool";
 import SettingToolOptions from "../components/SettingToolOptions";
 
-const GridLayout = () => {
+const GridLayout = (props) => {
     const sumTextData = {
         time: 3337,
         distance: 3337,
