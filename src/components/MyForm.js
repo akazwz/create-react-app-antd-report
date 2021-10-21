@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { DatePicker, Divider, Form, Select } from "antd";
-import 'moment/locale/zh-cn';
+import { Button, DatePicker, Divider, Form, Select } from "antd";
 import locale from 'antd/es/date-picker/locale/zh_CN';
 import Text from "antd/lib/typography/Text";
 import { useWindowSize } from "../hooks/useWindowSize";
-import SettingToolOptions from "./SettingToolOptions";
-
-const {Option} = Select;
+import 'moment/locale/zh-cn';
 
 const MyForm = (props) => {
-    const {breakpoint} = props;
+    const {breakpoint, userOptions, snsOptions} = props;
     const [form] = Form.useForm();
     const [formLayout, setFormLayout] = useState('horizontal');
     const [selectWidth, setSelectWidth] = useState(200);
+    const [startTime, setStartTime] = useState('');
+    const [endTime, setEndTime] = useState('');
+
     useEffect(() => {
         if (breakpoint === 'xs') {
             setFormLayout('inline');
@@ -61,26 +61,42 @@ const MyForm = (props) => {
                             </Text>
                         </Divider>
                         <Form.Item
-                            name="time"
-                            label="Time"
+                            name="startTime"
+                            label="Start Time"
                             rules={[
                                 {
-                                    required: true,
+                                    required: false,
                                 },
                             ]}
                         >
-                            <DatePicker locale={locale} showToday size='large' />
+                            <DatePicker
+                                locale={locale}
+                                showToday
+                                size='large'
+                                value={startTime}
+                                onChange={(value, str) => {
+                                    setStartTime(str);
+                                }}
+                            />
                         </Form.Item>
                         <Form.Item
-                            name="time"
-                            label="Time"
+                            name="endTime"
+                            label="End Time"
                             rules={[
                                 {
-                                    required: true,
+                                    required: false,
                                 },
                             ]}
                         >
-                            <DatePicker locale={locale} showToday size='large' />
+                            <DatePicker
+                                locale={locale}
+                                showToday
+                                size='large'
+                                value={endTime}
+                                onChange={(value, str) => {
+                                    setEndTime(str);
+                                }}
+                            />
                         </Form.Item>
                         <Divider>
                             <Text style={{
@@ -91,88 +107,65 @@ const MyForm = (props) => {
                             </Text>
                         </Divider>
                         <Form.Item
-                            name="gender"
-                            label="Gender"
+                            name="userId"
+                            label="username"
                             rules={[
                                 {
-                                    required: true,
+                                    required: false,
                                 },
                             ]}
                         >
                             <Select
-                                placeholder="Select a option and change input text above"
-                                //onChange={onGenderChange}
+                                placeholder="Select users"
                                 allowClear
                                 showSearch
                                 style={{width: selectWidth}}
-                                optionFilterProp="children"
+                                optionFilterProp="label"
                                 filterOption={(input, option) =>
-                                    option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                                    option.label.toString().includes(input)
                                 }
-                                filterSort={(optionA, optionB) =>
-                                    optionA.children.toLowerCase().localeCompare(optionB.children.toLowerCase())
-                                }
-                            >
-                                <Option value="male">male</Option>
-                                <Option value="female">female</Option>
-                                <Option value="other">other</Option>
-                            </Select>
+                                options={userOptions}
+                            />
                         </Form.Item>
                         <Form.Item
-                            name="gender"
-                            label="Gender"
+                            name="sn"
+                            label="SN"
                             rules={[
                                 {
-                                    required: true,
+                                    required: false,
                                 },
                             ]}
                         >
                             <Select
-                                placeholder="Select a option and change input text above"
-                                //onChange={onGenderChange}
+                                placeholder="Select sns"
                                 allowClear
                                 showSearch
                                 style={{width: selectWidth}}
-                                optionFilterProp="children"
+                                optionFilterProp="label"
                                 filterOption={(input, option) =>
-                                    option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                                    option.label.toString().includes(input)
                                 }
-                                filterSort={(optionA, optionB) =>
-                                    optionA.children.toLowerCase().localeCompare(optionB.children.toLowerCase())
-                                }
-                            >
-                                <Option value="male">male</Option>
-                                <Option value="female">female</Option>
-                                <Option value="other">other</Option>
-                            </Select>
+                                options={snsOptions}
+                            />
                         </Form.Item>
                         <Form.Item
-                            name="gender"
-                            label="Gender"
+                            name="type"
+                            label="Type"
                             rules={[
                                 {
-                                    required: true,
+                                    required: false,
                                 },
                             ]}
                         >
                             <Select
-                                placeholder="Select a option and change input text above"
-                                //onChange={onGenderChange}
+                                placeholder="Select sns"
                                 allowClear
-                                showSearch
                                 style={{width: selectWidth}}
-                                optionFilterProp="children"
-                                filterOption={(input, option) =>
-                                    option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                                }
-                                filterSort={(optionA, optionB) =>
-                                    optionA.children.toLowerCase().localeCompare(optionB.children.toLowerCase())
-                                }
-                            >
-                                <Option value="male">male</Option>
-                                <Option value="female">female</Option>
-                                <Option value="other">other</Option>
-                            </Select>
+                                options={[
+                                    {label: 'auto', value: 'auto'},
+                                    {label: 'grader', value: 'grader'},
+                                ]}
+                            />
                         </Form.Item>
                     </Form>
                 </div>
@@ -180,10 +173,14 @@ const MyForm = (props) => {
                     display: 'flex',
                     justifyContent: 'center',
                 }}>
-                    some
+
+                    <Button onClick={() => {
+                        alert(form.getFieldValue('sn'));
+                    }}>
+                        筛选
+                    </Button>
                 </div>
             </div>
-
         </>
     );
 };

@@ -7,6 +7,20 @@ const App = () => {
     const [addressData, setAddressData] = useState();
     const [sumTextData, setSumTextData] = useState();
     const [sns, setSns] = useState([]);
+    const userOptions = [
+        {
+            label: 'zwz',
+            value: 1,
+        },
+        {
+            label: 'zhaowenzhuo',
+            value: 2,
+        },
+        {
+            label: 'someone',
+            value: 3,
+        }
+    ];
     useEffect(() => {
         getWorkReportDataApi().then((res) => {
             console.log(res);
@@ -24,7 +38,12 @@ const App = () => {
 
     return (
         <>
-            <GridLayout sumTextData={sumTextData} addressData={addressData} sns={sns} />
+            <GridLayout
+                sumTextData={sumTextData}
+                addressData={addressData}
+                sns={sns}
+                userOptions={userOptions}
+            />
         </>
     );
 };

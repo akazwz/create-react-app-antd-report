@@ -455,6 +455,34 @@ const GridLayout = (props) => {
             },
         ],
     };
+    const userOptions = [
+        {
+            label: 'zwz',
+            value: 1,
+        },
+        {
+            label: 'zhaowenzhuo',
+            value: 2,
+        },
+        {
+            label: 'someone',
+            value: 3,
+        }
+    ];
+    const snsOptions = [
+        {
+            label: '123123213',
+            value: '1232132131',
+        },
+        {
+            label: '123213123',
+            value: '4234234234',
+        },
+        {
+            label: '3453434534',
+            value: '4765765765',
+        }
+    ];
 
     const ResponsiveGridLayout = WidthProvider(Responsive);
     const [breakpoint, setBreakpoint] = useState('lg');
@@ -538,7 +566,11 @@ const GridLayout = (props) => {
                 </div>
                 <div key="work-report-setting" style={{backgroundColor: '#ffffff', overflow: 'hidden'}}
                      hidden={settingHidden}>
-                    <SettingTool breakpoint={breakpoint}/>
+                    <SettingTool
+                        breakpoint={breakpoint}
+                        userOptions={userOptions}
+                        snsOptions={snsOptions}
+                    />
                 </div>
             </ResponsiveGridLayout>
         </>
