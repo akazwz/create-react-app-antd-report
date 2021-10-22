@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Card, Row, Col, Statistic } from 'antd';
 import Text from 'antd/lib/typography/Text';
 import SelectCustom from './SelectCustom';
-import { useWindowSize } from "../hooks/useWindowSize";
 
 const UnitText = (props) => {
     const unit = props.unit;
@@ -99,34 +98,34 @@ const SumDataTextShow = (props) => {
 
     return (
         <>
-            <Card title="Card title"
+            <Card title="数据总览"
                   style={{width: '100%', height: '100%', textAlign: 'center'}}>
                 <Row gutter={16}>
                     <Col xs={12} sm={12} md={12} lg={12} xl={12}>
                         <Card bordered={true}>
                             <SelectCustom selects={timeUnits} onSelect={handleSelectTimeUnit} />
-                            <Statistic title="title" precision={2} value={showTime}
+                            <Statistic title="作业时长" precision={2} value={showTime}
                                        suffix={<UnitText unit={timeUnit} />} />
                         </Card>
                     </Col>
                     <Col xs={12} sm={12} md={12} lg={12} xl={12}>
                         <Card bordered={true}>
                             <SelectCustom selects={distanceUnits} onSelect={handleSelectDistanceUnit} />
-                            <Statistic title="title" precision={2} value={showDistance}
+                            <Statistic title="作业距离" precision={2} value={showDistance}
                                        suffix={<UnitText unit={distanceUnit} />} />
                         </Card>
                     </Col>
                     <Col xs={12} sm={12} md={12} lg={12} xl={12}>
                         <Card bordered={true}>
                             <SelectCustom selects={areaUnits} onSelect={handleSelectAreaUnit} />
-                            <Statistic title="title" precision={2} value={showArea}
+                            <Statistic title="作业面积" precision={2} value={showArea}
                                        suffix={<UnitText unit={areaUnit} />} />
                         </Card>
                     </Col>
                     <Col xs={12} sm={12} md={12} lg={12} xl={12}>
                         <Card bordered={true}>
                             <SelectCustom selects={earthUnits} onSelect={handleSelectEarthUnit} />
-                            <Statistic title="title" precision={2} value={showEarth}
+                            <Statistic title="土方量" precision={2} value={showEarth}
                                        suffix={<UnitText unit={earthUnit} />} />
                         </Card>
                     </Col>

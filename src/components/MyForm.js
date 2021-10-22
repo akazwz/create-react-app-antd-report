@@ -14,7 +14,7 @@ const MyForm = (props) => {
     const [endTime, setEndTime] = useState('');
 
     useEffect(() => {
-        if (breakpoint === 'xs') {
+        if (breakpoint === 'xs' || breakpoint === 'xxs') {
             setFormLayout('inline');
             setSelectWidth(150);
         } else {
@@ -57,12 +57,12 @@ const MyForm = (props) => {
                                 fontWeight: 'bolder',
                                 fontSize: 17,
                             }}>
-                                Duration Select
+                                日期筛选
                             </Text>
                         </Divider>
                         <Form.Item
                             name="startTime"
-                            label="Start Time"
+                            label="开始日期"
                             rules={[
                                 {
                                     required: false,
@@ -72,16 +72,17 @@ const MyForm = (props) => {
                             <DatePicker
                                 locale={locale}
                                 showToday
-                                size='large'
+                                size='default'
                                 value={startTime}
                                 onChange={(value, str) => {
                                     setStartTime(str);
                                 }}
+                                width={selectWidth}
                             />
                         </Form.Item>
                         <Form.Item
                             name="endTime"
-                            label="End Time"
+                            label="结束日期"
                             rules={[
                                 {
                                     required: false,
@@ -91,7 +92,7 @@ const MyForm = (props) => {
                             <DatePicker
                                 locale={locale}
                                 showToday
-                                size='large'
+                                size='default'
                                 value={endTime}
                                 onChange={(value, str) => {
                                     setEndTime(str);
@@ -101,14 +102,14 @@ const MyForm = (props) => {
                         <Divider>
                             <Text style={{
                                 fontWeight: 'bolder',
-                                fontSize: 21,
+                                fontSize: 17,
                             }}>
-                                Options Filter
+                                条件筛选
                             </Text>
                         </Divider>
                         <Form.Item
                             name="userId"
-                            label="username"
+                            label="用户名"
                             rules={[
                                 {
                                     required: false,
@@ -116,7 +117,7 @@ const MyForm = (props) => {
                             ]}
                         >
                             <Select
-                                placeholder="Select users"
+                                placeholder="请输入用户名"
                                 allowClear
                                 showSearch
                                 style={{width: selectWidth}}
@@ -129,7 +130,7 @@ const MyForm = (props) => {
                         </Form.Item>
                         <Form.Item
                             name="sn"
-                            label="SN"
+                            label="设备SN"
                             rules={[
                                 {
                                     required: false,
@@ -137,7 +138,7 @@ const MyForm = (props) => {
                             ]}
                         >
                             <Select
-                                placeholder="Select sns"
+                                placeholder="请选择设备sn"
                                 allowClear
                                 showSearch
                                 style={{width: selectWidth}}
@@ -150,7 +151,7 @@ const MyForm = (props) => {
                         </Form.Item>
                         <Form.Item
                             name="type"
-                            label="Type"
+                            label="设备类型"
                             rules={[
                                 {
                                     required: false,
@@ -158,12 +159,12 @@ const MyForm = (props) => {
                             ]}
                         >
                             <Select
-                                placeholder="Select sns"
+                                placeholder="请选择设备类型"
                                 allowClear
                                 style={{width: selectWidth}}
                                 options={[
-                                    {label: 'auto', value: 'auto'},
-                                    {label: 'grader', value: 'grader'},
+                                    {label: '自动驾驶', value: 'auto'},
+                                    {label: '平地仪', value: 'grader'},
                                 ]}
                             />
                         </Form.Item>
@@ -174,9 +175,10 @@ const MyForm = (props) => {
                     justifyContent: 'center',
                 }}>
 
-                    <Button onClick={() => {
-                        alert(form.getFieldValue('sn'));
-                    }}>
+                    <Button
+                        type="primary"
+                        onClick={() => {
+                        }}>
                         筛选
                     </Button>
                 </div>

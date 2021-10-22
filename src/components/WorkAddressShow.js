@@ -108,7 +108,7 @@ const WorkAddressShow = (props) => {
         <Card title={<Row>
             <Col span={12}>
                 <div style={{textAlign: 'right', marginRight: '-30px'}}>
-                    some
+                    设备分布
                 </div>
             </Col>
             <Col span={12}>

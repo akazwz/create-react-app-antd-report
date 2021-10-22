@@ -45,10 +45,10 @@ const WorkDataShow = (props) => {
     return (
         <Card title={<div style={{textAlign: 'center'}}>
             <Radio.Group onChange={handleRadioOnChange} defaultValue="time">
-                <Radio.Button value="time">Time</Radio.Button>
-                <Radio.Button value="distance">Distance</Radio.Button>
-                <Radio.Button value="area">Area</Radio.Button>
-                <Radio.Button value="earth">Earth</Radio.Button>
+                <Radio.Button value="time">作业时长</Radio.Button>
+                <Radio.Button value="distance">作业距离</Radio.Button>
+                <Radio.Button value="area">作业面积</Radio.Button>
+                <Radio.Button value="earth">土方量</Radio.Button>
             </Radio.Group>
         </div>}
               style={{width: '100%', height: '100%', overflow: 'hidden'}}>
