@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Card, Col, Row } from "antd";
 import { Pie, measureTextWidth } from '@ant-design/charts';
+import * as echarts from 'echarts';
 import SelectCustom from './SelectCustom';
 
 const WorkAddressShow = (props) => {
