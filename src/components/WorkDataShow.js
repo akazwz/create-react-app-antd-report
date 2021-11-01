@@ -8,14 +8,12 @@ const WorkDataShow = (props) => {
 
     const config = {
         data: chartData,
+        height: 350,
         isGroup: true,
         xField: 'month',
         yField: 'value',
         seriesField: 'name',
-        color: [
-            '#1890FF',
-            '#FBD642'
-        ],
+        color: ['#1890FF', '#FBD642'],
         label: {
             position: 'middle',
             layout: [
