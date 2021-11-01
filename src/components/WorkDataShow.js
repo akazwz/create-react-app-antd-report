@@ -12,6 +12,10 @@ const WorkDataShow = (props) => {
         xField: 'month',
         yField: 'value',
         seriesField: 'name',
+        color: [
+            '#1890FF',
+            '#FBD642'
+        ],
         label: {
             position: 'middle',
             layout: [

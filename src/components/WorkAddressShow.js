@@ -39,6 +39,7 @@ const WorkAddressShow = (props) => {
         colorField: 'type',
         radius: 1,
         innerRadius: 0.64,
+        color: ['#1890FF', '#FAD337', '#4DCB73', '#F2637B', '#228B22', '#90EE90', '#FF4500', '#4B0082', '#800000'],
         meta: {
             value: {
                 formatter: function formatter(v) {
